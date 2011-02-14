@@ -1,0 +1,17 @@
+<html>
+<head>
+  <script src="http://maps.google.com/maps?file=api&v=2.x&sensor=false&key=ABQIAAAALQM2PjWeNK4-PVeYgeoWERRAer5SXShg4Fsk6rCt1v86h7paMhTSv2JHjxL-0cWem-3oOA7ZqELk6w" type="text/javascript"></script>
+  <script type="text/javascript">
+    function initialize() {
+      if (GBrowserIsCompatible()) {
+        var map = new GMap2(document.getElementById("map_canvas"));
+        map.setCenter(new GLatLng(64.856, -147.849), 13);
+        map.setUIToDefault();
+      }
+    }
+  </script>
+</head>
+<body onload="initialize()" onunload="GUnload()">
+  <div id="map_canvas" style="width: 100%; height: 100%"></div>
+</body>
+</html>

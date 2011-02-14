@@ -1,0 +1,45 @@
+<html>
+<head>
+  <title>Google Maps GINA Services Example</title>
+  <style>
+    body { padding: 0px; margin: 0px; }
+    div { padding: 0; margin: 0; }
+    .header {
+      font-size: 2em;
+      font-weight: bold;
+    }
+  </style>
+  <script src="http://maps.google.com/maps?file=api&v=2.x&sensor=false&key=ABQIAAAA7V1eTSMuX7P1yqIgm66GfxT4_reNkMUqai7KSBUgx1mL3DUVKxRpB6k1ausLizoQFrinThJtaPJFdg"
+  type="text/javascript"></script>
+  <script src="http://glink.gina.alaska.edu/cdn/2.x/javascripts/maps/bdl_gmapv2.js" type="text/javascript"></script>
+  <script type="text/javascript">
+    function initialize() {
+      if (GBrowserIsCompatible()) {
+        var map = new GMap2(document.getElementById("map_canvas"));
+        map.setCenter(new GLatLng(64.856, -147.849), 13);
+        map.setUIToDefault();
+        map.addMapType(GINA.layers.SDMI_BDL);
+        map.addMapType(GINA.layers.SDMI_BDL_HYBRID);
+        map.addMapType(GINA.layers.SDMI_TOPO);
+        map.addMapType(GINA.layers.SDMI_CHART);
+        map.addMapType(GINA.layers.SDMI_SRNED);
+        map.addMapType(GINA.layers.SDMI_LSPAN);
+        map.addMapType(GINA.layers.AOOS_BATH);
+      }
+    }
+  </script>
+</head>
+<body onload="initialize()" onunload="GUnload()">
+  <div style="clear: both; width: 100%; height: 100%; padding: 0; margin: 0;">
+  <div style="width: 100%; height: 20%; text-align: center;" class="header">
+    <img src="/images/header_with_white_bgx1024.png" style="height: 100%" alt="Geographic Information Network of Alaska" />
+  </div>
+  <div style="width: 100%; height: 79%; clear:both;">
+    <div id="map_canvas" style="float: left; width: 50%; height: 100%; border: 1px solid black;"></div>
+    <div style="float:right; border: 1px solid black; width: 49%;">
+      <iframe src="https://spreadsheets.google.com/embeddedform?formkey=dGxOU05uUXk2bUY1MW41VGFLLVhpZmc6MA" frameborder="0" marginheight="0" marginwidth="0" style="width: 100%; height: 100%;">Loading...</iframe>
+    </div>
+  </div>
+  </div>
+</body>
+</html>
