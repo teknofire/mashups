@@ -1,0 +1,6 @@
+[submodule "presentations"]
+	path = presentations
+	url = git@github.com:teknofire/presentations.git
+[submodule "gina-map-layers-examples"]
+	path = gina-map-layers-examples
+	url = git@github.com:gina-alaska/gina-map-layers-examples.git

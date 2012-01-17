@@ -1,0 +1,77 @@
+body.bp {
+  #page {
+    @include container;
+  }
+  #header, #footer {
+    @include column($blueprint-grid-columns);
+  }
+  #header {
+    margin: 1em 0;
+    background-image: url('/images/headerbg.png');
+    height: 134px;
+    text-align: center;
+
+    h1 {
+      font-weight: bold;
+      margin-top: 25px;
+      color: $header-text-color;
+      @include text-shadow($header-shadow-color, 0px, 0px, 5px);
+    }
+    h2 {
+      font-weight: bold;
+      margin: 0;
+      color: $header-text-color;
+      @include text-shadow($header-shadow-color, 0px, 0px, 5px);
+    }
+  }
+  #signature {
+    text-align: center;
+    font-size: 1.2em;
+    p { margin: 0; }
+  }
+
+  #code {
+    font-size: 1.3em;
+    padding: 3px;
+    width: 100%;
+    
+    textarea {
+      width: 98%;
+      margin: 0 auto;
+    }
+  }
+
+  .box {
+    text-align: center;
+    border: 1px dashed #000;
+    padding: 2em;
+    font-size: 1.3em;
+
+    a {
+      font-size: 1.2em;
+    }
+  }
+
+  h3 {
+    margin: 1em 0 0.1em 0;
+  }
+
+  .menu {
+    a {
+      border: 1px solid #888;
+      text-decoration: none;
+      display: block;
+      padding: 1em;
+      margin: 0.5em 0;
+      font-size: 0.9em;
+
+      .subtext {
+        font-size: 0.8em;
+      }
+    }
+
+    a:hover {
+      background: #ccc;
+    }
+  }
+}

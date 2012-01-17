@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/!svn/ver/18/trunk/tools/jsdoc-toolkit
+END
+changes.txt
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/18/trunk/tools/jsdoc-toolkit/changes.txt
+END
+mxn.conf
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/18/trunk/tools/jsdoc-toolkit/mxn.conf
+END
+jsrun.sh
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/18/trunk/tools/jsdoc-toolkit/jsrun.sh
+END
+README.txt
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/18/trunk/tools/jsdoc-toolkit/README.txt
+END
+jsrun.jar
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/18/trunk/tools/jsdoc-toolkit/jsrun.jar
+END
+jsdebug.jar
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/18/trunk/tools/jsdoc-toolkit/jsdebug.jar
+END

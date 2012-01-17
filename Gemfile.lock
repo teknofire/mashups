@@ -15,6 +15,7 @@ GEM
       rack-mount (~> 0.6.13)
       rack-test (~> 0.5.6)
       tzinfo (~> 0.3.23)
+    active_link_to (0.0.6)
     activemodel (3.0.3)
       activesupport (= 3.0.3)
       builder (~> 2.1.2)
@@ -30,6 +31,14 @@ GEM
     activesupport (3.0.3)
     arel (2.0.4)
     builder (2.1.2)
+    comfortable_mexican_sofa (1.0.44)
+      active_link_to (>= 0.0.6)
+      active_link_to (>= 0.0.6)
+      mime-types
+      paperclip (>= 2.3.8)
+      paperclip (>= 2.3.8)
+      rails (>= 3.0.3)
+      rails (>= 3.0.3)
     compass (0.10.6)
       haml (>= 3.0.4)
     erubis (2.6.6)
@@ -42,6 +51,9 @@ GEM
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     mime-types (1.16)
+    paperclip (2.3.8)
+      activerecord
+      activesupport
     polyglot (0.3.1)
     rack (1.2.1)
     rack-mount (0.6.13)
@@ -72,6 +84,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  comfortable_mexican_sofa
   compass (>= 0.10.6)
   haml
   rails (= 3.0.3)

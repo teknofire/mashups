@@ -28,8 +28,8 @@
     <!-- Enable Browser History by replacing useBrowserHistory tokens with two hyphens -->
 
         <!-- BEGIN Browser History required section -->
-        <link rel="stylesheet" type="text/css" href="history/history.css" />
-        <script type="text/javascript" src="history/history.js"></script>
+        <!--<link rel="stylesheet" type="text/css" href="history/history.css" />
+        <script type="text/javascript" src="history/history.js"></script>-->
         <!-- END Browser History required section -->  
         
         <script type="text/javascript" src="swfobject.js"></script>
@@ -50,15 +50,15 @@
             attributes.align = "middle";
             swfobject.embedSWF(
                 "Main.swf", "flashContent", 
-                "100%", "100%", 
+                "960px", "500px", 
                 swfVersionStr, xiSwfUrlStr, 
                 flashvars, params, attributes);
       <!-- JavaScript enabled so display the flashContent div in case it is not replaced with a swf object. -->
       swfobject.createCSS("#flashContent", "display:block;text-align:left;");
         </script>
+
     </head>
     <body>
-
         <!-- SWFObject's dynamic embed method replaces this alternative HTML content with Flash content when enough 
        JavaScript and Flash plug-in support is available. The div is initially hidden so that it doesn't show
        when JavaScript is disabled.
@@ -73,6 +73,43 @@
         document.write("<a href='http://www.adobe.com/go/getflashplayer'><img src='" 
                 + pageHost + "www.adobe.com/images/shared/download_buttons/get_flash_player.gif' alt='Get Adobe Flash player' /></a>" ); 
       </script> 
+        </div>
+        <div class="example-code" style="height: 400px">
+          <h1>ESRI Flex Example Code</h1>
+          <textarea style="width:960px; margin: 0 auto; height: 100%;">
+<mx:Application 
+  xmlns:mx="http://www.adobe.com/2006/mxml" 
+  xmlns:esri="http://www.esri.com/2008/ags" 
+  layout="absolute" styleName="plain" pageTitle="Example using GINA\'s Rest Services">
+  <mx:Script>
+    <![CDATA[
+      import mx.events.FlexEvent;
+      import com.esri.ags.layers.TiledMapServiceLayer;
+ 
+      private function layerShowHandler(event:FlexEvent):void
+      {
+        // update the LODs/zoomslider to use/show the levels for the selected base map
+        var tiledLayer:TiledMapServiceLayer = event.target as TiledMapServiceLayer;
+        map.lods = tiledLayer.tileInfo.lods;
+      }
+    ]]>
+  </mx:Script>
+  <esri:Map id="map">
+    <esri:ArcGISTiledMapServiceLayer visible="{bb.selectedIndex == 0}" show="layerShowHandler(event)" url="http://rest.proto.gina.alaska.edu/rest/ArcGIS/rest/services/bdl/MapServer"/>
+    <esri:ArcGISTiledMapServiceLayer visible="{bb.selectedIndex == 1}" show="layerShowHandler(event)" url="http://rest.proto.gina.alaska.edu/rest/ArcGIS/rest/services/63k_drg_shaded/MapServer"/>
+    <esri:ArcGISTiledMapServiceLayer visible="{bb.selectedIndex == 2}" show="layerShowHandler(event)" url="http://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer"/>
+  </esri:Map>
+  <mx:ToggleButtonBar id="bb" horizontalGap="2" selectedIndex="0" right="5" top="5">
+    <mx:dataProvider>
+      <mx:Array>
+        <mx:String>BDL</mx:String>
+        <mx:String>63k Topo</mx:String>
+        <mx:String>ESRI Imagery</mx:String>
+      </mx:Array>
+    </mx:dataProvider>
+  </mx:ToggleButtonBar>
+</mx:Application>
+          </textarea>
         </div>
       
         <noscript>
@@ -103,6 +140,7 @@
                 <!--<![endif]-->
             </object>
       </noscript>   
+
    </body>
 
 </html>

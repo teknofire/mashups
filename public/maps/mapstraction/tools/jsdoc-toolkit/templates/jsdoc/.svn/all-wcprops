@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/18/trunk/tools/jsdoc-toolkit/templates/jsdoc
+END
+class.tmpl
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/18/trunk/tools/jsdoc-toolkit/templates/jsdoc/class.tmpl
+END
+symbol.tmpl
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/18/trunk/tools/jsdoc-toolkit/templates/jsdoc/symbol.tmpl
+END
+publish.js
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/18/trunk/tools/jsdoc-toolkit/templates/jsdoc/publish.js
+END
+allclasses.tmpl
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/18/trunk/tools/jsdoc-toolkit/templates/jsdoc/allclasses.tmpl
+END
+index.tmpl
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/18/trunk/tools/jsdoc-toolkit/templates/jsdoc/index.tmpl
+END
+allfiles.tmpl
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/18/trunk/tools/jsdoc-toolkit/templates/jsdoc/allfiles.tmpl
+END

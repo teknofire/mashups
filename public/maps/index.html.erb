@@ -1,0 +1,107 @@
+<table width="100%" height="100%">
+  <tr height="1%">
+    <th>Google</th>
+    <th>BDL</th>
+    <th>BING</th>
+  </tr>
+  <tr>
+    <td width="33%"><div id="google"></div></td>
+    <td width="33%"><div id="bdl"></div></td>
+    <td width="33%"><div id="bing" class="bing"></div></td>
+  </tr>
+</table>
+<% content_for :head do -%>
+  <style type="text/css">
+  #google {
+    height: 100%;
+    width: 100%;
+    border: 1px solid black;
+  }
+  #bdl {
+    height: 100%;
+    width: 100%;
+    border: 1px solid black;
+  }
+  .bing {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    border: 1px solid black;
+  }
+  </style>
+<% end -%>
+<% content_for :javascript do -%>
+function initialize() {
+  var google, bdl, bing, scripted = false;
+
+  var google_move = function() {
+    if(scripted) { return; }
+
+    var center = google.getCenter();
+    var zoom = google.getZoom();
+
+    scripted = true;
+    bdl.setCenterAndZoom(center, zoom);
+    bing.setCenterAndZoom(center, zoom);
+    scripted = false;
+  };
+  var bdl_move = function() {
+    if(scripted) { return; }
+
+    var center = bdl.getCenter();
+    var zoom = bdl.getZoom();
+
+    scripted = true;
+    google.setCenterAndZoom(center, zoom);
+    bing.setCenterAndZoom(center, zoom);
+    scripted = false;
+  };
+  var bing_move = function() {
+    if(scripted) { return; }
+
+    var center = bing.getCenter();
+    var zoom = bing.getZoom();
+
+    scripted = true;
+    bdl.setCenterAndZoom(center, zoom);
+    google.setCenterAndZoom(center, zoom);
+    scripted = false;
+  };
+  
+  var latlon = new mxn.LatLonPoint(<%= @lng -%>,<%= @lat -%>);
+  var zoom = <%= @zoom -%>;
+  
+  var map_config = {
+    pan: true,
+    map_type: true,
+    zoom:'large',
+    scale: true
+  };
+
+  google = new mxn.Mapstraction('google','google');
+  google.addControls(map_config);
+  google.setCenterAndZoom(latlon, zoom);
+  google.setMapType(mxn.Mapstraction.HYBRID);
+  google.setOption('enableScrollWheelZoom', true);
+
+  google.addEventListener('moveend', google_move);
+  google.addEventListener('zoom', google_move);
+
+  bdl = new mxn.Mapstraction('bdl','google');
+  bdl.maps[bdl.api].addMapType(SDMI_BDL_HYBRID);
+  bdl.addControls(map_config);
+  bdl.setCenterAndZoom(latlon, zoom);
+  bdl.setMapType(SDMI_BDL_HYBRID);
+  bdl.setOption('enableScrollWheelZoom', true);
+
+  bdl.addEventListener('moveend', bdl_move);
+  bdl.addEventListener('zoom', bdl_move);
+
+  bing = new mxn.Mapstraction('bing', 'microsoft');
+  bing.addControls(map_config);
+  bing.setCenterAndZoom(latlon, zoom);
+  bing.addEventListener('moveend', bing_move);
+  bing.addEventListener('zoom', bing_move);
+  bing.setMapType(mxn.Mapstraction.HYBRID);
+}
+<% end -%>
